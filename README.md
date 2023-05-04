@@ -1,3 +1,5 @@
+## HUOM! Koodin laatu on hyvin matala koska se kirjoitettiin hyvin nopealla aikataululla.
+
 # loma.rip
 Laskenta seuraavaan lomaan. Nykyhetkellä laskee aikaa kesälomaan.
 
