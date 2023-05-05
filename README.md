@@ -1,6 +1,6 @@
 ## HUOM! Koodin laatu on hyvin matala koska se kirjoitettiin hyvin nopealla aikataululla.
 
-# loma.rip
+# [loma.rip](https://loma.rip)
 Laskenta seuraavaan lomaan. Nykyhetkellä laskee aikaa kesälomaan.
 
 ## Käyttöohjeet
