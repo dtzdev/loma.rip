@@ -3,7 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>loma.rip</title>
+	<title>loma.rip - Laskuri kesäloman alkuun</title>
+	<meta name="title" content="loma.rip - Laskuri kesäloman alkuun">
+	<meta name="description" content="Haluatko nähdä kauanko kesäloman alkuun on aikaa? Loma.rip on helppo tapa nopeasti nähdä kauanko kesäloman alkuun on.">
+	<meta name="keywords" content="kesäloma, laskuri, aikaa, loma-ajat"> 
+	<meta name="author" content="dtz"> 
+	<meta http-equiv="content-language" content="fi-FI"> 
+	<meta name="revisit-after" content="1 days"> 
+	<meta name="robots" content="index, follow"> 
 	<style>
 		body {
 			background: #000000;
@@ -198,15 +205,15 @@
 			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-			document.getElementById("countdown").innerHTML = days + "p " + hours + " " + minutes + "m " + seconds + "s ";
+			document.getElementById("countdown").innerHTML = days + "p " + hours + "t " + minutes + "m " + seconds + "s ";
 
             // If the countdown is finished
   	        if (distance < 0) {
   		        clearInterval(x);
   		        document.getElementById("countdown").innerHTML = "Hyvää kesälomaa!";
-                document.getElementById("countdown").style.fontSize = "3rem";
-                document.getElementById("text1").innerHTML = "Sivusto palaa koulujen alkaessa.";
-                document.getElementById("text1").style.fontSize = "2rem";
+               		 document.getElementById("countdown").style.fontSize = "3rem";
+                	document.getElementById("text1").innerHTML = "Sivusto palaa koulujen alkaessa.";
+                	document.getElementById("text1").style.fontSize = "2rem";
   	        }
         }, 1000);
     </script>
