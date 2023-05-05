@@ -1,221 +1,292 @@
 <!DOCTYPE html>
 <html lang="fi-FI">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>loma.rip - Laskuri kesäloman alkuun</title>
-	<meta name="title" content="loma.rip - Laskuri kesäloman alkuun">
-	<meta name="description" content="Haluatko nähdä kauanko kesäloman alkuun on aikaa? Loma.rip on helppo tapa nopeasti nähdä kauanko kesäloman alkuun on.">
-	<meta name="keywords" content="kesäloma, laskuri, aikaa, loma-ajat"> 
-	<meta name="author" content="dtz"> 
-	<meta http-equiv="content-language" content="fi-FI"> 
-	<meta name="revisit-after" content="1 days"> 
-	<meta name="robots" content="index, follow"> 
-	<style>
-		body {
-			background: #000000;
-			color: white;
-			font-family: "Segoe UI", sans-serif;
-			font-size: 1.5rem;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-            overflow: hidden;
-		}
-		.container {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			height: 200px;
-			width: 600px;
-			background: linear-gradient(to right, #0f0f0f 0%, #ffffff 50%, #000000 100%);
-			background-size: 200% 100%;
-			animation: gradient 10s ease infinite;
-			border-radius: 10px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-			position: relative;
-			overflow: hidden;
-		}
-        .container2 {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			height: 100px;
-			width: 600px;
-			background: transparent;
-			background-size: 200% 100%;
-			animation: gradient 10s ease infinite;
-			border-radius: 10px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-			position: relative;
-			overflow: hidden;
-		}
-		#countdown {
-			font-size: 5rem;
-			margin: 0 auto;
-			display: block;
-			text-align: center;
-			animation: countdown 4s linear infinite;
-			color: #0f0f0f;
-			text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-		}
-		#countdown span {
-			font-size: 1.5rem;
-			display: block;
-			margin-top: 10px;
-			color: #a0a0a0;
-		}
-        #coutdown.paused {
-        animation-play-state: paused;
-        }
-		.text {
-        position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            opacity: 1;
-            text-align: center;
-            color: #0F0F0F;
-            font-size: 3rem;
-            font-weight: bold;
-            font-family: "Segoe UI", sans-serif;
-            animation: showtext 2s ease;
-            animation-fill-mode: none;
-        }
-		@keyframes gradient {
-			0% {
-				background-position: 0% 50%;
-			}
-			50% {
-				background-position: 100% 50%;
-			}
-			100% {
-				background-position: 0% 50%;
-			}
-		}
-		@keyframes countdown {
-			0% {
-				transform: scale(1);
-			}
-			50% {
-				transform: scale(1.005);
-			}
-			100% {
-				transform: scale(1);
-			}
-		}
-		@keyframes showtext {
-			0% {
-				opacity: 0;
-				transform: translateY(-100%);
-			}
-			75% {
-				opacity: 1;
-			}
-			100% {
-				transform: translateY(0);
-			}
-		}
-        .button-container {
-            position: fixed;
-            bottom: 5%;
-            left: 50%;
-            transform: translate(-50%, 50%);
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
-        .button-github, .button-fullscreen {
-            font-size: 20px;
-            font-weight: bold;
-            padding: 10px 20px;
-            transition: font-size 0.2s ease-in-out;
-            color: #FFFFFF;
-            text-decoration: none;
-            background-color: transparent;
-            
-        }
-        button {
-            border: none;
-            outline: none;
-        }
-        .button-github:hover, .button-fullscreen:hover {
-            font-size: 25px;
-        }
-        .button-text {
-            font-size: 14px;
-            color: white;
-            margin-left: 10px;
-        }
-        .button-fullscreen {
-            margin-left: 20px;
-        }
-        a {
-            text-decoration: none;
-        }
-        .text-container {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .text-loma,
-        .text-by {
-            display: block;
-            color: white;
-            font-size: 12px;
-            font-style: italic;
-            font-weight: bold;
-            margin-top: 5px;
-        }
-        .text-by {
-            margin-top: 0;
-        }
-	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>loma.rip - Laskuri kesäloman alkuun</title>
+  <meta name="title" content="loma.rip - Laskuri kesäloman alkuun">
+  <meta name="description"
+    content="Haluatko nähdä kauanko kesäloman alkuun on aikaa? Loma.rip on helppo tapa nopeasti nähdä kauanko kesäloman alkuun on.">
+  <meta name="keywords" content="kesäloma, laskuri, aikaa, loma-ajat">
+  <meta name="author" content="dtz">
+  <meta http-equiv="content-language" content="fi-FI">
+  <meta name="revisit-after" content="1 days">
+  <meta name="robots" content="index, follow">
+  <style>
+    body {
+      background: #000000;
+      color: white;
+      font-family: "Segoe UI", sans-serif;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      width: 600px;
+      background: linear-gradient(to right, #0f0f0f 0%, #ffffff 50%, #000000 100%);
+      background-size: 200% 100%;
+      animation: gradient 10s ease infinite;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 600px;
+      background: transparent;
+      background-size: 200% 100%;
+      animation: gradient 10s ease infinite;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 36.5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+
+    #countdown {
+      font-size: 5rem;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      animation: countdown 4s linear infinite;
+      color: #0f0f0f;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    #countdown span {
+      font-size: 1.5rem;
+      display: block;
+      margin-top: 10px;
+      color: #a0a0a0;
+    }
+
+    #coutdown.paused {
+      animation-play-state: paused;
+    }
+
+    .text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 1;
+      text-align: center;
+      color: #0F0F0F;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: "Segoe UI", sans-serif;
+      animation: showtext 2s ease;
+      animation-fill-mode: none;
+    }
+
+    .textClass {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      opacity: 1;
+      text-align: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: "Segoe UI", sans-serif;
+      animation: showtext 2s ease;
+      animation-fill-mode: forwards;
+    }
+
+    .textClass-underline {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-100%);
+      opacity: 1;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: "Segoe UI", sans-serif;
+      text-decoration: underline;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes countdown {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.005);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes showtext {
+      0% {
+        opacity: 0;
+        transform: translateY(-50%);
+      }
+
+      75% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .button-container {
+      position: fixed;
+      bottom: 5%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-github,
+    .button-fullscreen {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 20px;
+      transition: font-size 0.2s ease-in-out;
+      color: #FFFFFF;
+      text-decoration: none;
+      background-color: transparent;
+
+    }
+
+    button {
+      border: none;
+      outline: none;
+    }
+
+    .button-github:hover,
+    .button-fullscreen:hover {
+      font-size: 25px;
+    }
+
+    .button-text {
+      font-size: 14px;
+      color: white;
+      margin-left: 10px;
+    }
+
+    .button-fullscreen {
+      margin-left: 20px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .text-container {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .text-loma,
+    .text-by {
+      display: block;
+      color: white;
+      font-size: 12px;
+      font-style: italic;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .text-by {
+      margin-top: 0;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-		<div id="text1" class="text">Kesäloman alkuun aikaa</div>
-		<div id="countdown"></div>
-	</div>
-    <div class="button-container">
-        <a href="https://github.com/dtzdev/loma.rip" class="button-github">Github</a>
-        <button class="button-fullscreen" onclick="toggleFullscreen()">Fullscreen</button>
-    </div>
-        <div class="text-container">
-        <span class="text-loma">loma.rip | by dtz</span>
-    </div>
+  <div class="container2">
+    <div id="text1" class="textClass-underline">loma.rip</div>
+    <div id="text1" class="textClass">Kesäloman alkuun aikaa: </div>
+  </div>
+  <div class="container">
+    <div id="countdown"></div>
+  </div>
+  <div class="button-container">
+    <a href="https://github.com/dtzdev/loma.rip" class="button-github">Github</a>
+    <button class="button-fullscreen" onclick="toggleFullscreen()">Fullscreen</button>
+  </div>
+  <div class="text-container">
+    <span class="text-loma">loma.rip | by dtz</span>
+  </div>
 
-	<script>
-        function toggleFullscreen() {
-        if (document.fullscreenElement) { document.exitFullscreen();
-        } else { document.documentElement.requestFullscreen();
-        }}
-		var countDownDate = new Date("Jun 3, 2023 00:00:00 GMT+0300").getTime();
-		var x = setInterval(function() {
-			var now = new Date().getTime();
-			var distance = countDownDate - now;
-			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-			document.getElementById("countdown").innerHTML = days + "p " + hours + "t " + minutes + "m " + seconds + "s ";
+  <script>
+    function toggleFullscreen() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        document.documentElement.requestFullscreen();
+      }
+    }
+    var countDownDate = new Date("Jun 3, 2023 00:00:00 GMT+0300").getTime();
+    var x = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerHTML = days + "p " + hours + "t " + minutes + "m " + seconds + "s ";
 
-            // If the countdown is finished
-  	        if (distance < 0) {
-  		        clearInterval(x);
-  		        document.getElementById("countdown").innerHTML = "Hyvää kesälomaa!";
-               		 document.getElementById("countdown").style.fontSize = "3rem";
-                	document.getElementById("text1").innerHTML = "Sivusto palaa koulujen alkaessa.";
-                	document.getElementById("text1").style.fontSize = "2rem";
-  	        }
-        }, 1000);
-    </script>
+      // If the countdown is finished
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "Hyvää kesälomaa!";
+        document.getElementById("countdown").style.fontSize = "3rem";
+        document.getElementById("text1").innerHTML = "Sivusto palaa koulujen alkaessa.";
+        document.getElementById("text1").style.fontSize = "2rem";
+      }
+    }, 1000);
+  </script>
 </body>
+
 </html>
