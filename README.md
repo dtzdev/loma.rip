@@ -1,5 +1,7 @@
 ## HUOM! Koodin laatu on hyvin matala koska se kirjoitettiin hyvin nopealla aikataululla.
 
+## Todo: Parempi skaalaus puhelimelle
+
 # [loma.rip](https://loma.rip)
 Laskenta seuraavaan lomaan. Nykyhetkellä laskee aikaa kesälomaan.
 
