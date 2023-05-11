@@ -8,7 +8,6 @@ Laskenta seuraavaan lomaan. Nykyhetkellä laskee aikaa kesälomaan.
 ## Käyttöohjeet
 1. Lataat tai kopioit index.html koodin.
 2. Avaat sivuston koneellasi
-<br>(Herokuhosting.js tiedosto on hosting palvelua varten. Tarvitset vain index.html tiedoston) 
 
 ## Tekijät
 [Jere / dtzdev](https://github.com/dtzdev) - Tekijä
