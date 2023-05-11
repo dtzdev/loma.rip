@@ -1,7 +1,7 @@
 {
   "name": "lomarip",
   "version": "1.0.0",
-  "description": "Website for loma.rip",
+  "description": "Website for loma.rip.",
   "main": "index.js",
   "scripts": {
     "start": "npm i && node index.js"
