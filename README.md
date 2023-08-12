@@ -1,13 +1,9 @@
-## HUOM! Koodin laatu on hyvin matala koska se kirjoitettiin hyvin nopealla aikataululla.
-
-## Todo: Parempi skaalaus puhelimelle
-
 # [loma.rip](https://loma.rip)
-Laskenta seuraavaan lomaan. Nykyhetkellä laskee aikaa kesälomaan.
+Laskenta seuraavaan lomaan. Nykyhetkellä laskee aikaa syyslomaan.
 
 ## Käyttöohjeet
-1. Lataat tai kopioit index.html koodin.
-2. Avaat sivuston koneellasi
+1. Lataat tai kopioit koodin.
+2. Avaat tiedoston index.html koneellasi
 
 ## Tekijät
 [Jere / dtzdev](https://github.com/dtzdev) - Tekijä
